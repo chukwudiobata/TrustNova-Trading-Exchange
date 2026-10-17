@@ -3,32 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#064e3b">
+<meta name="theme-color" content="#087f5b">
 
 <title>TrustNova Trading Exchange</title>
 
-<meta name="description"
-content="TrustNova Trading Exchange. Trust in Every Trade.">
+<meta name="description" content="TrustNova Trading Exchange. Gift card trading in Nigeria. Trust in Every Trade.">
 
 <style>
 :root {
-  --green: #064e3b;
-  --green-light: #087653;
-  --gold: #d4af57;
-  --background: #f5f8f5;
+  --green: #087f5b;
+  --green-dark: #07513e;
+  --green-light: #e8f7ef;
+  --purple: #7138c8;
+  --purple-light: #f2ebff;
   --white: #ffffff;
-  --text: #172923;
-  --muted: #718078;
-  --border: #e1e9e3;
+  --text: #17251f;
+  --muted: #68756e;
+  --border: #e5ebe7;
+  --background: #f7faf8;
 }
 
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 body {
+  margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   background: var(--background);
   color: var(--text);
@@ -44,13 +44,8 @@ button {
 }
 
 a {
-  text-decoration: none;
   color: inherit;
-}
-
-.container {
-  width: min(1120px, 92%);
-  margin: auto;
+  text-decoration: none;
 }
 
 header {
@@ -62,73 +57,64 @@ header {
 }
 
 .nav {
-  min-height: 76px;
+  max-width: 1150px;
+  margin: auto;
+  padding: 13px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
+  gap: 14px;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 11px;
+  gap: 10px;
+  min-width: 0;
 }
 
 .logo {
-  width: 46px;
-  height: 46px;
-  border-radius: 14px;
-  background: var(--green);
-  color: var(--gold);
-  display: grid;
-  place-items: center;
-  font-size: 22px;
-  font-weight: 900;
-  border: 2px solid var(--gold);
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
 }
 
 .brand-name {
-  font-size: 19px;
-  line-height: 1.2;
   font-weight: 800;
-  color: var(--green);
+  font-size: 17px;
+  color: var(--green-dark);
+  line-height: 1.25;
 }
 
-.brand-subtitle {
-  font-size: 10px;
-  letter-spacing: 2px;
-  color: #9b7a31;
-  font-weight: bold;
+.brand-motto {
+  font-size: 11px;
+  color: var(--purple);
+  font-weight: 700;
 }
 
-.nav-links {
+.nav-actions {
   display: flex;
   align-items: center;
-  gap: 22px;
-  font-size: 14px;
-}
-
-.nav-links a:hover {
-  color: var(--green-light);
+  gap: 8px;
 }
 
 .btn {
-  border: 0;
-  padding: 12px 19px;
-  border-radius: 9px;
-  font-weight: 700;
   display: inline-block;
+  border: 0;
+  border-radius: 9px;
+  padding: 11px 17px;
+  font-weight: 700;
   text-align: center;
 }
 
-.btn-primary {
+.btn-green {
   background: var(--green);
   color: white;
 }
 
-.btn-primary:hover {
-  background: var(--green-light);
+.btn-purple {
+  background: var(--purple);
+  color: white;
 }
 
 .btn-outline {
@@ -137,411 +123,343 @@ header {
   background: white;
 }
 
-.btn-gold {
-  background: var(--gold);
-  color: #172923;
+.btn:hover {
+  opacity: .9;
+}
+
+main {
+  max-width: 1150px;
+  padding: 28px 20px 55px;
+  margin: auto;
 }
 
 .hero {
-  background: linear-gradient(125deg, #043e2e, #087653);
+  background: linear-gradient(125deg, #07513e, #087f5b 65%, #7138c8);
+  border-radius: 20px;
   color: white;
-  padding: 76px 0;
+  padding: 46px 36px;
+  position: relative;
   overflow: hidden;
 }
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.3fr .7fr;
-  align-items: center;
-  gap: 42px;
+.hero::after {
+  content: "";
+  width: 220px;
+  height: 220px;
+  border: 35px solid rgba(255,255,255,.08);
+  border-radius: 50%;
+  position: absolute;
+  right: -65px;
+  top: -75px;
 }
 
 .eyebrow {
-  color: var(--gold);
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 12px;
-  font-weight: bold;
-  margin-bottom: 15px;
+  font-weight: 800;
 }
 
 .hero h1 {
-  font-size: clamp(36px, 5vw, 57px);
-  line-height: 1.12;
-  margin-bottom: 22px;
+  font-size: clamp(29px, 5vw, 48px);
+  line-height: 1.15;
   max-width: 650px;
-}
-
-.hero h1 span {
-  color: var(--gold);
+  margin: 13px 0;
 }
 
 .hero p {
-  color: #e1eee7;
-  max-width: 580px;
-  margin-bottom: 28px;
+  max-width: 590px;
+  color: #e5f5ed;
 }
 
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+.hero .btn {
+  margin-top: 12px;
 }
 
-.hero-card {
-  background: white;
-  color: var(--text);
-  padding: 30px;
-  border-radius: 18px;
-  box-shadow: 0 20px 55px #001e1633;
-}
-
-.hero-card .mini-logo {
-  width: 54px;
-  height: 54px;
-  border: 2px solid var(--gold);
-  background: var(--green);
-  color: var(--gold);
-  display: grid;
-  place-items: center;
-  border-radius: 15px;
-  font-size: 27px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.hero-card h3 {
-  color: var(--green);
-  margin-bottom: 8px;
-  font-size: 23px;
-}
-
-.hero-card p {
-  color: var(--muted);
-  margin-bottom: 18px;
-  font-size: 14px;
-}
-
-.status-note {
-  border-top: 1px solid var(--border);
-  padding-top: 15px;
-  font-size: 12px;
-  color: #8a6928;
-}
-
-section {
-  padding: 65px 0;
+.section {
+  margin-top: 36px;
 }
 
 .section-heading {
-  text-align: center;
-  max-width: 650px;
-  margin: 0 auto 35px;
+  margin-bottom: 18px;
 }
 
 .section-heading h2 {
-  color: var(--green);
-  font-size: clamp(27px, 4vw, 36px);
-  margin-bottom: 10px;
+  margin: 0 0 5px;
+  font-size: 25px;
 }
 
 .section-heading p {
+  margin: 0;
   color: var(--muted);
 }
 
-.features {
+.grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 17px;
 }
 
-.feature {
-  padding: 25px;
+.card {
   background: white;
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: 15px;
+  padding: 21px;
+  min-width: 0;
 }
 
-.feature-icon {
-  width: 48px;
-  height: 48px;
+.card-icon {
+  width: 45px;
+  height: 45px;
   display: grid;
   place-items: center;
-  background: #e7f3eb;
+  background: var(--green-light);
   border-radius: 12px;
-  font-size: 24px;
-  margin-bottom: 17px;
+  font-size: 23px;
+  margin-bottom: 12px;
 }
 
-.feature h3 {
-  margin-bottom: 8px;
-  color: var(--green);
+.card h3 {
+  margin: 5px 0;
+  font-size: 17px;
 }
 
-.feature p {
+.card p {
+  margin: 5px 0 0;
   color: var(--muted);
   font-size: 14px;
 }
 
-.categories {
-  background: white;
-}
-
-.category-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
-}
-
-.category {
-  border: 1px solid var(--border);
-  border-radius: 13px;
-  padding: 22px 12px;
-  text-align: center;
-  background: #fff;
-}
-
-.category .icon {
-  font-size: 31px;
-  margin-bottom: 8px;
-}
-
-.category h3 {
-  color: var(--green);
-  font-size: 15px;
-}
-
-.category p {
-  color: var(--muted);
-  font-size: 12px;
-  margin-top: 5px;
+.purple-icon {
+  background: var(--purple-light);
 }
 
 .notice {
-  background: #fff9e9;
-  border: 1px solid #ead9a9;
-  padding: 17px;
-  border-radius: 10px;
-  color: #715a21;
-  font-size: 13px;
-  margin-top: 25px;
-}
-
-.trade-section {
-  background: var(--background);
-}
-
-.trade-layout {
-  display: grid;
-  grid-template-columns: .8fr 1.2fr;
-  gap: 28px;
-  align-items: start;
-}
-
-.trade-info {
-  background: var(--green);
-  color: white;
-  padding: 30px;
-  border-radius: 16px;
-}
-
-.trade-info h2 {
-  font-size: 30px;
-  line-height: 1.2;
-  margin-bottom: 15px;
-}
-
-.trade-info p {
-  color: #d7e9df;
-  margin-bottom: 20px;
-}
-
-.trade-info li {
-  list-style: none;
-  margin: 14px 0;
+  border-left: 4px solid var(--purple);
+  background: var(--purple-light);
+  border-radius: 8px;
+  padding: 15px;
+  margin-top: 22px;
   font-size: 14px;
 }
 
-.trade-form {
+.panel {
+  display: none;
   background: white;
-  padding: 30px;
-  border-radius: 16px;
   border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 25px;
+  margin-top: 25px;
 }
 
-.trade-form h2 {
-  color: var(--green);
-  margin-bottom: 8px;
+.panel.active {
+  display: block;
 }
 
-.form-description {
-  color: var(--muted);
-  font-size: 13px;
-  margin-bottom: 22px;
+.panel h2 {
+  margin-top: 0;
 }
 
 .form-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 17px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
 }
 
 .field {
-  margin-bottom: 17px;
+  margin-bottom: 15px;
 }
 
-.field.full {
-  grid-column: 1 / -1;
-}
-
-label {
+.field label {
   display: block;
-  font-size: 13px;
   font-weight: 700;
-  margin-bottom: 7px;
+  font-size: 14px;
+  margin-bottom: 6px;
 }
 
-input, select, textarea {
+.field input,
+.field select,
+.field textarea {
   width: 100%;
   padding: 12px;
-  border: 1px solid #d6e0d9;
-  border-radius: 8px;
+  border: 1px solid #d5dfd9;
+  border-radius: 9px;
   background: white;
   color: var(--text);
 }
 
-input:focus, select:focus, textarea:focus {
-  outline: 2px solid #b4d9c2;
-  border-color: var(--green);
-}
-
-textarea {
+.field textarea {
   min-height: 90px;
   resize: vertical;
 }
 
-.full-button {
-  width: 100%;
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: 2px solid #b6e5ce;
+  border-color: var(--green);
 }
 
-.auth-section {
-  background: white;
-}
-
-.auth-card {
-  max-width: 560px;
-  margin: auto;
-  padding: 30px;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-}
-
-.auth-card h2 {
-  color: var(--green);
-  margin-bottom: 8px;
-}
-
-.auth-card > p {
-  color: var(--muted);
-  margin-bottom: 22px;
+.form-message {
+  margin-top: 14px;
+  padding: 12px;
+  background: var(--green-light);
+  border-radius: 8px;
+  display: none;
   font-size: 14px;
 }
 
-footer {
-  background: #032f24;
-  color: white;
-  padding: 40px 0 20px;
+.form-message.show {
+  display: block;
 }
 
-.footer-grid {
+.auth-box {
+  max-width: 470px;
+  margin: 25px auto;
+}
+
+.auth-box .card {
+  padding: 28px;
+}
+
+.link-button {
+  background: none;
+  border: 0;
+  color: var(--purple);
+  font-weight: 700;
+  padding: 8px 0;
+}
+
+.categories {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
-  gap: 30px;
-  padding-bottom: 28px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
 }
 
-footer h3 {
-  color: var(--gold);
-  margin-bottom: 12px;
-}
-
-footer p, footer a {
-  color: #d1e0d8;
+.category {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 15px 8px;
+  text-align: center;
+  font-weight: 700;
   font-size: 13px;
 }
 
-footer a {
+.category span {
   display: block;
-  margin-bottom: 8px;
+  font-size: 25px;
+  margin-bottom: 6px;
 }
 
-.footer-bottom {
-  border-top: 1px solid #31564a;
-  padding-top: 17px;
-  font-size: 12px;
-  color: #c2d4ca;
+.steps {
+  counter-reset: step;
 }
 
-.demo-banner {
-  background: #fff3cd;
-  color: #674f0a;
-  text-align: center;
-  padding: 10px;
+.step {
+  display: flex;
+  gap: 13px;
+  margin: 19px 0;
+}
+
+.step-number {
+  background: var(--green-light);
+  color: var(--green);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+footer {
+  background: #102b21;
+  color: white;
+  padding: 32px 20px;
+}
+
+.footer-inner {
+  max-width: 1150px;
+  margin: auto;
+}
+
+footer p {
+  color: #d1e1d8;
+  font-size: 13px;
+}
+
+.footer-title {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+footer .brand-motto {
+  color: #d9c7ff;
+}
+
+.small {
   font-size: 12px;
-  font-weight: 700;
+  color: var(--muted);
 }
 
 .hidden {
   display: none !important;
 }
 
-@media (max-width: 760px) {
-  .nav {
-    padding: 12px 0;
-    flex-wrap: wrap;
+@media (max-width: 750px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .nav-links {
-    width: 100%;
-    justify-content: space-between;
-    gap: 10px;
-    font-size: 12px;
-  }
-
-  .nav-links .btn {
-    padding: 9px 11px;
+  .categories {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .hero {
-    padding: 52px 0;
-  }
-
-  .hero-grid, .trade-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-card {
-    max-width: 470px;
-  }
-
-  .features {
-    grid-template-columns: 1fr;
-  }
-
-  .category-grid {
-    grid-template-columns: repeat(2, 1fr);
+    padding: 32px 23px;
   }
 
   .form-grid {
     grid-template-columns: 1fr;
+    gap: 0;
   }
 
-  .field.full {
-    grid-column: auto;
+  .brand-name {
+    font-size: 14px;
   }
 
-  .footer-grid {
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav {
+    padding: 12px;
+  }
+
+  .nav-actions .btn {
+    padding: 9px 10px;
+    font-size: 12px;
+  }
+
+  main {
+    padding: 20px 13px 40px;
+  }
+
+  .card {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 380px) {
+  .grid {
     grid-template-columns: 1fr;
+  }
+
+  .brand-motto {
+    font-size: 10px;
   }
 }
 </style>
@@ -549,257 +467,253 @@ footer a {
 
 <body>
 
-<div class="demo-banner">
-  WEBSITE PREVIEW — Customer accounts and real trading are not yet activated.
-</div>
-
 <header>
-  <div class="container nav">
-    <a class="brand" href="#home" aria-label="TrustNova homepage">
-      <div class="logo">TN</div>
+  <nav class="nav">
+    <a class="brand" href="#" onclick="showHome();return false;"
+       aria-label="TrustNova home">
+
+      <!-- TrustNova logo, built directly into this file -->
+      <svg class="logo" viewBox="0 0 100 100"
+           xmlns="http://www.w3.org/2000/svg" role="img"
+           aria-label="TrustNova logo">
+        <rect x="3" y="3" width="94" height="94" rx="25"
+              fill="#087f5b"/>
+        <path d="M22 30 L50 16 L78 30 L78 53
+                 Q75 73 50 85 Q25 73 22 53 Z"
+              fill="#ffffff"/>
+        <path d="M32 48 L44 60 L68 36"
+              fill="none" stroke="#7138c8"
+              stroke-width="8" stroke-linecap="round"
+              stroke-linejoin="round"/>
+        <circle cx="75" cy="23" r="9" fill="#bca0ff"/>
+      </svg>
+
       <div>
         <div class="brand-name">TrustNova</div>
-        <div class="brand-subtitle">TRADING EXCHANGE</div>
+        <div class="brand-motto">Trust in Every Trade.</div>
       </div>
     </a>
 
-    <nav class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#cards">Gift Cards</a>
-      <a href="#sell">Sell a Card</a>
-      <a href="#account" class="btn btn-primary">Get Started</a>
-    </nav>
-  </div>
+    <div class="nav-actions">
+      <button class="btn btn-outline" onclick="showAuth('login')">
+        Log in
+      </button>
+      <button class="btn btn-green" onclick="showAuth('signup')">
+        Get Started
+      </button>
+    </div>
+  </nav>
 </header>
 
-<main>
+<main id="home">
 
-<section class="hero" id="home">
-  <div class="container hero-grid">
+  <section class="hero">
+    <div class="eyebrow">Welcome to TrustNova</div>
+    <h1>Your gift cards.<br>Your next opportunity.</h1>
+    <p>
+      A simpler way to begin your gift-card trading journey.
+      Submit your gift card for review and receive a payout offer
+      after verification.
+    </p>
+    <button class="btn btn-purple" onclick="showAuth('signup')">
+      Create Your Account →
+    </button>
+  </section>
 
-    <div>
-      <div class="eyebrow">Trust in Every Trade.</div>
-
-      <h1>
-        Your Gift Cards.<br>
-        <span>A Trusted Trading Journey.</span>
-      </h1>
-
-      <p>
-        Welcome to TrustNova Trading Exchange.
-        Our goal is to make gift-card trading clear,
-        organized and dependable for customers in Nigeria.
-      </p>
-
-      <div class="hero-actions">
-        <a href="#sell" class="btn btn-gold">Explore Card Trading</a>
-        <a href="#services" class="btn btn-outline"
-           style="background:transparent;color:white;border-color:#ffffff88">
-          Learn About Us
-        </a>
-      </div>
-    </div>
-
-    <div class="hero-card">
-      <div class="mini-logo">TN</div>
-      <h3>Welcome to TrustNova</h3>
-      <p>
-        A new approach to gift-card trading, built around
-        transparency, responsible handling and customer confidence.
-      </p>
-      <div class="status-note">
-        Current status: Website development and testing.
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section id="services">
-  <div class="container">
-
+  <section class="section">
     <div class="section-heading">
-      <h2>Built Around Trust</h2>
-      <p>
-        We are preparing a clear and organized experience
-        for customers who want to trade gift cards.
-      </p>
+      <h2>Why TrustNova?</h2>
+      <p>Built around clarity, careful verification and customer support.</p>
     </div>
 
-    <div class="features">
-
-      <article class="feature">
-        <div class="feature-icon">🔒</div>
-        <h3>Security First</h3>
-        <p>
-          We will configure protected accounts and appropriate
-          safeguards before customer trading begins.
-        </p>
+    <div class="grid">
+      <article class="card">
+        <div class="card-icon">🛡️</div>
+        <h3>Verification First</h3>
+        <p>Gift cards must be reviewed before a payout is approved.</p>
       </article>
 
-      <article class="feature">
-        <div class="feature-icon">📋</div>
-        <h3>Clear Transactions</h3>
-        <p>
-          The planned dashboard will help customers follow
-          submitted cards and transaction statuses.
-        </p>
+      <article class="card">
+        <div class="card-icon purple-icon">💳</div>
+        <h3>Gift Cards</h3>
+        <p>Our planned first service is gift-card trading in Nigeria.</p>
       </article>
 
-      <article class="feature">
-        <div class="feature-icon">🤝</div>
+      <article class="card">
+        <div class="card-icon">🤝</div>
         <h3>Customer Support</h3>
-        <p>
-          We plan to provide a support channel for questions,
-          complaints and transaction enquiries.
-        </p>
+        <p>Get help with submissions and account questions.</p>
       </article>
-
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="categories" id="cards">
-  <div class="container">
-
+  <section class="section">
     <div class="section-heading">
-      <h2>Gift Card Categories</h2>
-      <p>
-        These are the gift-card brands we plan to review
-        for possible support at launch.
-      </p>
+      <h2>Gift cards we plan to support</h2>
+      <p>Availability and buying rates will be confirmed before launch.</p>
     </div>
 
-    <div class="category-grid">
-
-      <article class="category">
-        <div class="icon">🍎</div>
-        <h3>Apple Gift Card</h3>
-        <p>Planned category</p>
-      </article>
-
-      <article class="category">
-        <div class="icon">📦</div>
-        <h3>Amazon Gift Card</h3>
-        <p>Planned category</p>
-      </article>
-
-      <article class="category">
-        <div class="icon">▶️</div>
-        <h3>Google Play</h3>
-        <p>Planned category</p>
-      </article>
-
-      <article class="category">
-        <div class="icon">🎮</div>
-        <h3>Steam Gift Card</h3>
-        <p>Planned category</p>
-      </article>
-
-      <article class="category">
-        <div class="icon">🟡</div>
-        <h3>Razer Gold</h3>
-        <p>Planned category</p>
-      </article>
-
-      <article class="category">
-        <div class="icon">💳</div>
-        <h3>American Express</h3>
-        <p>Acceptance to be confirmed</p>
-      </article>
-
-      <article class="category">
-        <div class="icon">🛍️</div>
-        <h3>Nordstrom</h3>
-        <p>Planned category</p>
-      </article>
-
-      <article class="category">
-        <div class="icon">🎮</div>
-        <h3>PlayStation</h3>
-        <p>Planned category</p>
-      </article>
-
-      <article class="category">
-        <div class="icon">🏬</div>
-        <h3>Macy's</h3>
-        <p>Planned category</p>
-      </article>
-
-      <article class="category">
-        <div class="icon">💵</div>
-        <h3>Vanilla</h3>
-        <p>Acceptance to be confirmed</p>
-      </article>
-
-      <article class="category">
-        <div class="icon">💄</div>
-        <h3>Sephora</h3>
-        <p>Planned category</p>
-      </article>
-
+    <div class="categories">
+      <div class="category"><span>🍎</span>Apple</div>
+      <div class="category"><span>📦</span>Amazon</div>
+      <div class="category"><span>▶️</span>Google Play</div>
+      <div class="category"><span>🎮</span>Steam</div>
+      <div class="category"><span>🕹️</span>Razer Gold</div>
+      <div class="category"><span>🎮</span>PlayStation</div>
+      <div class="category"><span>🛍️</span>Sephora</div>
+      <div class="category"><span>🎁</span>Other cards</div>
     </div>
 
     <div class="notice">
-      <strong>Please note:</strong>
-      These categories are design previews, not confirmation
-      that TrustNova currently buys these cards. Accepted brands,
-      countries, card types and rates must be configured and verified
-      before trading starts.
+      <strong>Important:</strong> Gift-card buying rates are not yet connected
+      to a verified live pricing service. No payout amount is guaranteed
+      by this preview.
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <h2>How it works</h2>
+      <p>A straightforward process, with verification before payment.</p>
     </div>
 
-  </div>
-</section>
+    <div class="card steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div>
+          <strong>Create an account</strong>
+          <p class="small">Register when account services are connected.</p>
+        </div>
+      </div>
 
-<section class="trade-section" id="sell">
-  <div class="container trade-layout">
+      <div class="step">
+        <div class="step-number">2</div>
+        <div>
+          <strong>Submit your gift card</strong>
+          <p class="small">Provide the required card details securely.</p>
+        </div>
+      </div>
 
-    <div class="trade-info">
-      <div class="eyebrow">Our planned process</div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <div>
+          <strong>Wait for verification</strong>
+          <p class="small">The card and applicable buying rate must be checked.</p>
+        </div>
+      </div>
 
-      <h2>Prepare Your Gift Card Submission</h2>
-
-      <p>
-        The future trading process will allow customers to
-        provide card details for review before any payout decision.
-      </p>
-
-      <ul>
-        <li>✓ Select a supported card brand</li>
-        <li>✓ Provide the country and denomination</li>
-        <li>✓ Submit the required card information securely</li>
-        <li>✓ Wait for verification and a confirmed offer</li>
-        <li>✓ Follow the transaction status</li>
-      </ul>
-
-      <div class="notice">
-        Do not enter a real gift-card code or upload a real
-        gift-card image while this preview is being tested.
+      <div class="step">
+        <div class="step-number">4</div>
+        <div>
+          <strong>Receive an approved offer</strong>
+          <p class="small">Payment follows only after the trading process is
+          verified and the agreed terms are met.</p>
+        </div>
       </div>
     </div>
+  </section>
 
-    <form class="trade-form" id="tradeForm">
+  <!-- Registration interface -->
+  <section id="authPanel" class="panel">
+    <div class="auth-box">
+      <div class="card">
+        <div class="brand" style="margin-bottom:20px">
+          <svg class="logo" viewBox="0 0 100 100"
+               xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="3" y="3" width="94" height="94" rx="25"
+                  fill="#087f5b"/>
+            <path d="M22 30 L50 16 L78 30 L78 53
+                     Q75 73 50 85 Q25 73 22 53 Z"
+                  fill="#fff"/>
+            <path d="M32 48 L44 60 L68 36"
+                  fill="none" stroke="#7138c8"
+                  stroke-width="8" stroke-linecap="round"
+                  stroke-linejoin="round"/>
+            <circle cx="75" cy="23" r="9" fill="#bca0ff"/>
+          </svg>
+          <div>
+            <div class="brand-name">TrustNova</div>
+            <div class="brand-motto">Trust in Every Trade.</div>
+          </div>
+        </div>
 
-      <h2>Gift Card Details</h2>
-      <p class="form-description">
-        Preview only. This form does not submit a real trade.
-      </p>
+        <h2 id="authTitle">Create your account</h2>
+        <p id="authDescription" class="small">
+          Account services are being prepared.
+        </p>
 
+        <form id="authForm">
+          <div id="nameField" class="field">
+            <label for="fullName">Full name</label>
+            <input id="fullName" type="text"
+                   autocomplete="name" placeholder="Your full name">
+          </div>
+
+          <div class="field">
+            <label for="email">Email address</label>
+            <input id="email" type="email"
+                   autocomplete="email" required
+                   placeholder="you@example.com">
+          </div>
+
+          <div class="field">
+            <label for="password">Password</label>
+            <input id="password" type="password"
+                   autocomplete="current-password"
+                   minlength="8" required
+                   placeholder="At least 8 characters">
+          </div>
+
+          <button class="btn btn-green" type="submit"
+                  style="width:100%">
+            Continue
+          </button>
+        </form>
+
+        <div id="authMessage" class="form-message" role="status"></div>
+
+        <p class="small">
+          This is an early website preview. Real account creation,
+          login, password recovery and secure session management
+          have not yet been connected.
+        </p>
+
+        <button class="link-button" onclick="toggleAuthMode()"
+                id="switchAuth">
+          Already have an account? Log in
+        </button>
+
+        <br>
+
+        <button class="link-button" onclick="showHome()">
+          ← Return to homepage
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gift card submission interface -->
+  <section id="tradePanel" class="panel">
+    <h2>Gift card submission preview</h2>
+    <p class="small">
+      This form is a design preview. It does not upload cards or
+      submit real transactions.
+    </p>
+
+    <form id="tradeForm">
       <div class="form-grid">
-
         <div class="field">
-          <label for="brand">Gift Card Brand</label>
-          <select id="brand" required>
-            <option value="">Select brand</option>
+          <label for="cardBrand">Gift card brand</label>
+          <select id="cardBrand" required>
+            <option value="">Choose a brand</option>
             <option>Apple Gift Card</option>
             <option>Amazon Gift Card</option>
             <option>Google Play</option>
-            <option>Steam Gift Card</option>
+            <option>Steam</option>
             <option>Razer Gold</option>
+            <option>PlayStation</option>
             <option>American Express</option>
             <option>Nordstrom</option>
-            <option>PlayStation</option>
             <option>Macy's</option>
             <option>Vanilla</option>
             <option>Sephora</option>
@@ -807,162 +721,176 @@ footer a {
         </div>
 
         <div class="field">
-          <label for="country">Card Country</label>
-          <select id="country" required>
-            <option value="">Select country</option>
+          <label for="cardCountry">Card country</label>
+          <select id="cardCountry" required>
+            <option value="">Choose country</option>
             <option>United States</option>
             <option>United Kingdom</option>
             <option>Canada</option>
-            <option>Australia</option>
             <option>Other</option>
           </select>
         </div>
 
         <div class="field">
-          <label for="currency">Card Currency</label>
-          <select id="currency" required>
-            <option value="">Select currency</option>
+          <label for="cardCurrency">Card currency</label>
+          <select id="cardCurrency" required>
+            <option value="">Choose currency</option>
             <option>USD</option>
             <option>GBP</option>
             <option>CAD</option>
-            <option>AUD</option>
-            <option>Other</option>
+            <option>EUR</option>
           </select>
         </div>
 
         <div class="field">
-          <label for="cardType">Card Type</label>
-          <select id="cardType" required>
-            <option value="">Select type</option>
-            <option>Physical card</option>
-            <option>Digital card</option>
-          </select>
+          <label for="cardValue">Card denomination</label>
+          <input id="cardValue" type="number"
+                 min="1" step="0.01" required
+                 placeholder="Enter card value">
         </div>
-
-        <div class="field">
-          <label for="value">Card Denomination</label>
-          <input id="value" type="number" min="1"
-                 step="0.01" placeholder="e.g. 100" required>
-        </div>
-
-        <div class="field">
-          <label for="quantity">Quantity</label>
-          <input id="quantity" type="number" min="1"
-                 max="100" step="1" value="1" required>
-        </div>
-
-        <div class="field full">
-          <label for="message">Additional Notes (Optional)</label>
-          <textarea id="message"
-                    placeholder="General notes only. Do not enter card codes or personal financial information."></textarea>
-        </div>
-
-        <div class="field full">
-          <button type="submit" class="btn btn-primary full-button">
-            Preview Submission
-          </button>
-        </div>
-
       </div>
 
-      <div id="formMessage" class="notice hidden" role="status"></div>
+      <div class="field">
+        <label for="cardType">Card format</label>
+        <select id="cardType" required>
+          <option value="">Choose card format</option>
+          <option>Physical card</option>
+          <option>Digital card</option>
+        </select>
+      </div>
 
+      <div class="field">
+        <label for="cardImage">Card image (optional in preview)</label>
+        <input id="cardImage" type="file"
+               accept="image/*">
+      </div>
+
+      <button class="btn btn-green" type="submit">
+        Preview Submission
+      </button>
+
+      <div id="tradeMessage" class="form-message"
+           role="status"></div>
     </form>
-  </div>
-</section>
-
-<section class="auth-section" id="account">
-  <div class="container">
-
-    <div class="section-heading">
-      <h2>Customer Account</h2>
-      <p>
-        Secure registration and login will be enabled after
-        the authentication system has been configured.
-      </p>
-    </div>
-
-    <div class="auth-card">
-      <h2>Welcome to TrustNova</h2>
-      <p>
-        Create an account or sign in when the secure
-        customer account system becomes available.
-      </p>
-
-      <div class="notice">
-        <strong>Account registration is not active yet.</strong>
-        This preview does not create accounts, store passwords,
-        or authenticate customers. Please do not enter your password.
-      </div>
-    </div>
-
-  </div>
-</section>
+  </section>
 
 </main>
 
 <footer>
-  <div class="container">
-
-    <div class="footer-grid">
-
+  <div class="footer-inner">
+    <div class="brand">
+      <svg class="logo" viewBox="0 0 100 100"
+           xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="3" y="3" width="94" height="94" rx="25"
+              fill="#087f5b"/>
+        <path d="M22 30 L50 16 L78 30 L78 53
+                 Q75 73 50 85 Q25 73 22 53 Z"
+              fill="#fff"/>
+        <path d="M32 48 L44 60 L68 36"
+              fill="none" stroke="#7138c8"
+              stroke-width="8" stroke-linecap="round"
+              stroke-linejoin="round"/>
+        <circle cx="75" cy="23" r="9" fill="#bca0ff"/>
+      </svg>
       <div>
-        <h3>TrustNova Trading Exchange</h3>
-        <p>
-          Trust in Every Trade.<br>
-          Preparing a transparent gift-card trading experience
-          for the Nigerian market.
-        </p>
+        <div class="footer-title">TrustNova Trading Exchange</div>
+        <div class="brand-motto">Trust in Every Trade.</div>
       </div>
-
-      <div>
-        <h3>Explore</h3>
-        <a href="#home">Home</a>
-        <a href="#services">Our Approach</a>
-        <a href="#cards">Gift Card Categories</a>
-        <a href="#sell">Trading Preview</a>
-      </div>
-
-      <div>
-        <h3>Customer Information</h3>
-        <a href="#account">Customer Account</a>
-        <a href="#support">Support Information</a>
-        <p>Official support contact to be added before launch.</p>
-      </div>
-
     </div>
 
-    <div class="footer-bottom">
-      &copy; <span id="year"></span> TrustNova Trading Exchange.
-      All rights reserved. Website preview.
-    </div>
-
+    <p>Gift-card trading website preview.</p>
+    <p>
+      Customer account security, verified rates, transaction processing
+      and support services must be connected and tested before launch.
+    </p>
+    <p>© <span id="year"></span> TrustNova Trading Exchange.</p>
   </div>
 </footer>
 
 <script>
+let authMode = "signup";
+
 document.getElementById("year").textContent =
   new Date().getFullYear();
 
-document.getElementById("tradeForm").addEventListener(
-  "submit",
-  function(event) {
+function showHome() {
+  document.getElementById("authPanel").classList.remove("active");
+  document.getElementById("tradePanel").classList.remove("active");
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function showAuth(mode) {
+  authMode = mode;
+
+  document.getElementById("authPanel").classList.add("active");
+  document.getElementById("tradePanel").classList.remove("active");
+
+  updateAuthMode();
+
+  document.getElementById("authPanel").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
+
+function updateAuthMode() {
+  const signup = authMode === "signup";
+
+  document.getElementById("authTitle").textContent =
+    signup ? "Create your account" : "Welcome back";
+
+  document.getElementById("authDescription").textContent =
+    signup
+      ? "Start your TrustNova account registration."
+      : "Sign in to your TrustNova account.";
+
+  document.getElementById("nameField").classList.toggle(
+    "hidden", !signup
+  );
+
+  document.getElementById("switchAuth").textContent =
+    signup
+      ? "Already have an account? Log in"
+      : "New to TrustNova? Create an account";
+
+  document.getElementById("password").autocomplete =
+    signup ? "new-password" : "current-password";
+
+  document.getElementById("authMessage").classList.remove("show");
+}
+
+function toggleAuthMode() {
+  authMode = authMode === "signup" ? "login" : "signup";
+  updateAuthMode();
+}
+
+document.getElementById("authForm").addEventListener(
+  "submit", function(event) {
     event.preventDefault();
 
-    const message = document.getElementById("formMessage");
+    const message = document.getElementById("authMessage");
 
     message.textContent =
-      "Preview successful. No trade was submitted or stored. " +
-      "Real submissions will be enabled only after secure " +
-      "customer accounts, backend processing, verified rates, " +
-      "and transaction controls are configured.";
+      "Preview only: real registration and login are not connected yet. " +
+      "No account has been created or authenticated.";
 
-    message.classList.remove("hidden");
+    message.classList.add("show");
+  }
+);
 
-    message.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest"
-    });
+document.getElementById("tradeForm").addEventListener(
+  "submit", function(event) {
+    event.preventDefault();
+
+    const message = document.getElementById("tradeMessage");
+
+    message.textContent =
+      "Preview only: this form has not sent a transaction. " +
+      "No card details have been uploaded or reviewed, and no payout " +
+      "has been calculated. Please do not enter gift card codes.";
+
+    message.classList.add("show");
   }
 );
 </script>
