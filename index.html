@@ -6,286 +6,460 @@
 
   <title>TrustNova Trading Exchange | Trust in Every Trade</title>
 
-  <meta name="description" content="TrustNova Trading Exchange is a Nigeria-first gift-card trading platform. Trust in Every Trade.">
-
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <meta
+    name="description"
+    content="TrustNova Trading Exchange is building a trusted platform for gift-card trading in Nigeria."
+  >
 
   <style>
     :root {
       --green: #147d50;
-      --dark-green: #0b5636;
       --purple: #6b3fc6;
-      --light: #f5f8f6;
+      --light-green: #eaf7ef;
+      --light-purple: #f2edff;
+      --dark: #17231c;
+      --muted: #68746c;
       --white: #ffffff;
-      --text: #202923;
-      --muted: #68736c;
-      --border: #e1e8e3;
+      --border: #e2e9e4;
+      --background: #f7faf8;
     }
 
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background: var(--light);
+      background: var(--background);
+      color: var(--dark);
       line-height: 1.6;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
     }
 
     header {
       background: var(--white);
       border-bottom: 1px solid var(--border);
-      padding: 15px 5%;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .header-inner {
+      max-width: 1150px;
+      margin: auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 14px;
-      max-width: 1100px;
-      margin: auto;
+      gap: 12px;
+      min-width: 0;
     }
 
     .brand img {
-      width: 75px;
-      height: 75px;
+      width: 70px;
+      height: 70px;
       object-fit: contain;
       flex-shrink: 0;
     }
 
+    .brand-text {
+      min-width: 0;
+    }
+
     .brand-name {
-      margin: 0;
-      color: var(--dark-green);
-      font-size: clamp(19px, 4vw, 28px);
+      font-size: 19px;
+      line-height: 1.25;
       font-weight: 900;
-      line-height: 1.3;
+      color: var(--green);
     }
 
-    .motto {
-      margin: 4px 0 0;
-      color: var(--purple);
-      font-weight: 800;
-    }
-
-    .announcement {
-      background: var(--dark-green);
-      color: white;
-      text-align: center;
-      padding: 10px;
+    .brand-motto {
       font-size: 13px;
+      font-weight: 700;
+      color: var(--purple);
     }
 
     nav {
       display: flex;
-      justify-content: center;
+      align-items: center;
       flex-wrap: wrap;
-      gap: 22px;
-      padding: 14px;
-      background: white;
-      border-bottom: 1px solid var(--border);
+      gap: 14px;
     }
 
     nav a {
-      color: var(--dark-green);
+      color: var(--dark);
       text-decoration: none;
+      font-size: 14px;
       font-weight: 700;
     }
 
-    main {
-      max-width: 1000px;
-      margin: auto;
-      padding: 25px 16px 45px;
-    }
-
-    .hero {
-      background: white;
-      padding: 35px 24px;
-      border-radius: 18px;
-      border: 1px solid var(--border);
-      text-align: center;
-      margin-bottom: 24px;
-    }
-
-    .hero h2 {
-      color: var(--dark-green);
-      font-size: clamp(27px, 5vw, 40px);
-      line-height: 1.2;
-      margin-top: 0;
-    }
-
-    .hero strong {
+    nav a:hover {
       color: var(--purple);
     }
 
-    .section {
-      background: white;
-      padding: 24px;
-      border-radius: 15px;
-      border: 1px solid var(--border);
-      margin-bottom: 22px;
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 20px;
     }
 
-    h2, h3 {
-      color: var(--dark-green);
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-    }
-
-    .step {
-      padding: 16px;
-      border-radius: 12px;
-      background: var(--light);
-      border-left: 4px solid var(--purple);
-    }
-
-    .step h3 {
-      margin-top: 0;
-    }
-
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .card {
-      padding: 10px 14px;
-      background: #f0eaff;
-      border: 1px solid #e0d4ff;
-      color: #45258b;
-      border-radius: 8px;
+    .announcement {
+      background: var(--light-green);
+      color: var(--green);
+      text-align: center;
+      padding: 10px 15px;
+      font-size: 13px;
       font-weight: 700;
     }
 
-    .notice {
-      background: #f0eaff;
-      padding: 13px;
+    .hero {
+      padding: 65px 0;
+      background:
+        radial-gradient(
+          circle at top right,
+          var(--light-purple),
+          transparent 45%
+        ),
+        var(--white);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      align-items: center;
+      gap: 35px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 7px 13px;
+      border-radius: 25px;
+      background: var(--light-green);
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.12;
+      margin: 20px 0;
+      letter-spacing: -1px;
+    }
+
+    h1 span {
+      color: var(--green);
+    }
+
+    .hero-description {
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 620px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 19px;
       border-radius: 9px;
-      color: #45258b;
+      border: 0;
+      text-decoration: none;
+      text-align: center;
+      font-weight: 800;
+    }
+
+    .button-primary {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .button-primary:hover {
+      background: #0e633e;
+    }
+
+    .button-secondary {
+      background: var(--light-purple);
+      color: var(--purple);
+    }
+
+    .hero-card {
+      padding: 28px;
+      border-radius: 18px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      box-shadow: 0 12px 35px rgba(20, 70, 40, 0.07);
+    }
+
+    .hero-card h2 {
+      margin-top: 0;
+      color: var(--green);
+    }
+
+    .feature {
+      padding: 13px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .feature:last-child {
+      border-bottom: 0;
+    }
+
+    section {
+      padding: 55px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 30px;
+    }
+
+    .section-heading h2 {
+      font-size: 30px;
+      margin: 0 0 10px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--white);
+      padding: 23px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--green);
+    }
+
+    .card p {
+      color: var(--muted);
       font-size: 14px;
+    }
+
+    .account-section {
+      background: var(--light-green);
+    }
+
+    .account-box {
+      max-width: 580px;
+      margin: auto;
+      padding: 28px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 8px 28px rgba(20, 70, 40, 0.05);
+    }
+
+    .account-box h2 {
+      margin-top: 0;
+    }
+
+    .account-tabs {
+      display: flex;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .tab-button {
+      flex: 1;
+      border: 1px solid var(--border);
+      padding: 11px;
+      border-radius: 8px;
+      background: var(--white);
+      font-weight: 800;
+      color: var(--dark);
+    }
+
+    .tab-button.active {
+      background: var(--purple);
+      color: var(--white);
+      border-color: var(--purple);
+    }
+
+    .form-group {
+      margin-bottom: 16px;
     }
 
     label {
       display: block;
-      margin: 13px 0 5px;
       font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 6px;
     }
 
-    input, select, textarea {
+    input,
+    select,
+    textarea {
       width: 100%;
       padding: 12px;
-      border: 1px solid #cbd5ce;
+      border: 1px solid #d7e0d9;
       border-radius: 8px;
-      font: inherit;
-      background: white;
+      background: var(--white);
+      color: var(--dark);
     }
 
-    button {
-      background: var(--green);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      padding: 12px 18px;
-      margin-top: 14px;
-      font: inherit;
-      font-weight: 700;
-      cursor: pointer;
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: 2px solid var(--light-purple);
+      border-color: var(--purple);
     }
 
-    button:hover {
-      background: var(--dark-green);
+    .full-width {
+      width: 100%;
     }
 
-    button.secondary {
-      background: var(--purple);
-    }
-
-    button:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-    }
-
-    .tabs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .tabs button {
-      margin-top: 0;
-    }
-
-    .tabs button.active {
-      background: var(--purple);
-    }
-
-    .hidden {
-      display: none !important;
+    .form-note {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 12px;
     }
 
     .message {
+      display: none;
+      margin-top: 15px;
       padding: 12px;
-      margin-top: 12px;
       border-radius: 8px;
-      background: #edf5ef;
       overflow-wrap: anywhere;
-    }
-
-    .message.error {
-      background: #fff0f0;
-      color: #9b2020;
-    }
-
-    .table-wrap {
-      overflow-x: auto;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 12px;
       font-size: 14px;
     }
 
-    th, td {
-      padding: 10px;
-      text-align: left;
-      border-bottom: 1px solid var(--border);
+    .message.success {
+      display: block;
+      background: var(--light-green);
+      color: var(--green);
     }
 
-    th {
-      background: var(--light);
+    .message.error {
+      display: block;
+      background: #fff0f0;
+      color: #a12525;
+    }
+
+    .dashboard {
+      display: none;
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    .dashboard h3 {
+      color: var(--green);
+    }
+
+    .status-box {
+      padding: 15px;
+      border-radius: 9px;
+      background: var(--light-purple);
+      color: var(--purple);
+      margin: 15px 0;
+      font-size: 14px;
+    }
+
+    .gift-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .gift-form .full-row {
+      grid-column: 1 / -1;
+    }
+
+    .notice {
+      padding: 16px;
+      border-left: 4px solid var(--purple);
+      background: var(--light-purple);
+      border-radius: 8px;
+      font-size: 14px;
     }
 
     footer {
-      background: var(--dark-green);
-      color: white;
+      background: #13271c;
+      color: var(--white);
+      padding: 35px 20px;
       text-align: center;
-      padding: 24px 15px;
     }
 
     footer strong {
-      color: #d9c8ff;
+      color: #a9edc4;
     }
 
-    @media (max-width: 500px) {
-      header {
-        padding: 12px;
+    footer p {
+      font-size: 13px;
+      color: #d1ddd5;
+    }
+
+    @media (max-width: 760px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
       }
 
-      .brand img {
-        width: 60px;
-        height: 60px;
+      nav {
+        gap: 12px;
       }
 
-      .section {
-        padding: 18px;
+      .hero {
+        padding: 42px 0;
+      }
+
+      .hero-grid,
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .brand-name {
+        font-size: 17px;
+      }
+
+      .gift-form {
+        grid-template-columns: 1fr;
+      }
+
+      .gift-form .full-row {
+        grid-column: auto;
+      }
+
+      .account-box {
+        padding: 20px;
       }
     }
   </style>
@@ -293,489 +467,189 @@
 
 <body>
 
+  <header>
+    <div class="header-inner">
+
+      <div class="brand">
+        <img
+          src="logo.png"
+          alt="TrustNova Trading Exchange Logo"
+          style="width:70px;height:70px;object-fit:contain;"
+        >
+
+        <div class="brand-text">
+          <div class="brand-name">
+            TRUSTNOVA TRADING EXCHANGE
+          </div>
+
+          <div class="brand-motto">
+            Trust in Every Trade.
+          </div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#gift-cards">Gift Cards</a>
+        <a href="#account">My Account</a>
+      </nav>
+
+    </div>
+  </header>
+
   <div class="announcement">
     Nigeria-first gift-card trading · Verification before payout
   </div>
 
-  <header>
-    <div class="brand">
-      <img src="./Logo.png"
-           alt="TrustNova Trading Exchange Logo"
-           onerror="this.style.display='none';">
-
-      <div>
-        <h1 class="brand-name">TrustNova Trading Exchange</h1>
-        <p class="motto">Trust in Every Trade.</p>
-      </div>
-    </div>
-  </header>
-
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#how-it-works">How It Works</a>
-    <a href="#gift-cards">Gift Cards</a>
-    <a href="#account">My Account</a>
-  </nav>
-
   <main>
 
     <section class="hero" id="home">
-      <h2>Trade Gift Cards with <strong>Confidence</strong></h2>
+      <div class="container hero-grid">
 
-      <p>
-        Welcome to TrustNova Trading Exchange, a Nigeria-first
-        gift-card trading platform designed around transparency,
-        account security and verification.
-      </p>
+        <div>
+          <span class="eyebrow">
+            Welcome to TrustNova
+          </span>
 
-      <a href="#account">
-        <button type="button">Access Your Account</button>
-      </a>
-    </section>
+          <h1>
+            Trade with confidence.
+            <span>Choose Trust.</span>
+          </h1>
 
-    <section class="section" id="how-it-works">
-      <h2>How It Works</h2>
-
-      <div class="steps">
-        <div class="step">
-          <h3>1. Create an Account</h3>
-          <p>Register with your name and email address.</p>
-        </div>
-
-        <div class="step">
-          <h3>2. Submit Your Card</h3>
-          <p>Provide your card details for review.</p>
-        </div>
-
-        <div class="step">
-          <h3>3. Verification</h3>
-          <p>Your submission must be reviewed before any payout.</p>
-        </div>
-      </div>
-
-      <p class="notice">
-        Important: Submitting a gift card does not guarantee acceptance
-        or payment. Final processing depends on verification and
-        operational arrangements.
-      </p>
-    </section>
-
-    <section class="section" id="gift-cards">
-      <h2>Gift Cards</h2>
-
-      <p>Our planned gift-card categories include:</p>
-
-      <div class="cards">
-        <span class="card">Apple</span>
-        <span class="card">Amazon</span>
-        <span class="card">Google Play</span>
-        <span class="card">Steam</span>
-        <span class="card">Razer Gold</span>
-        <span class="card">PlayStation</span>
-        <span class="card">Sephora</span>
-        <span class="card">Nordstrom</span>
-        <span class="card">American Express</span>
-        <span class="card">Vanilla</span>
-        <span class="card">Macy's</span>
-      </div>
-
-      <p class="notice">
-        These are planned categories, not confirmation that every card
-        is currently accepted. Live rates and card availability have
-        not yet been activated.
-      </p>
-    </section>
-
-    <section class="section" id="account">
-      <h2>My TrustNova Account</h2>
-
-      <div id="auth-area">
-        <div class="tabs">
-          <button type="button" id="login-tab" class="active">
-            Log In
-          </button>
-
-          <button type="button" id="signup-tab" class="secondary">
-            Create Account
-          </button>
-        </div>
-
-        <form id="auth-form">
-          <div id="name-field" class="hidden">
-            <label for="full-name">Full Name</label>
-            <input id="full-name"
-                   type="text"
-                   autocomplete="name">
-          </div>
-
-          <label for="email">Email Address</label>
-          <input id="email"
-                 type="email"
-                 autocomplete="email"
-                 required>
-
-          <label for="password">Password</label>
-          <input id="password"
-                 type="password"
-                 autocomplete="current-password"
-                 minlength="8"
-                 required>
-
-          <button id="auth-submit" type="submit">Log In</button>
-
-          <div id="auth-message" class="message hidden"></div>
-        </form>
-
-        <p class="notice">
-          Use an email address you can access. Email confirmation
-          may be required when creating an account.
-        </p>
-      </div>
-
-      <div id="dashboard" class="hidden">
-        <h3 id="welcome-message">Welcome to TrustNova</h3>
-
-        <p>Your account is connected.</p>
-
-        <button type="button" id="logout-button" class="secondary">
-          Log Out
-        </button>
-
-        <hr>
-
-        <h3>Submit a Gift Card for Review</h3>
-
-        <form id="trade-form">
-          <label for="card-brand">Gift Card Brand</label>
-          <select id="card-brand" required>
-            <option value="">Choose a card</option>
-            <option>Apple</option>
-            <option>Amazon</option>
-            <option>Google Play</option>
-            <option>Steam</option>
-            <option>Razer Gold</option>
-            <option>PlayStation</option>
-            <option>Sephora</option>
-            <option>Nordstrom</option>
-            <option>American Express</option>
-            <option>Vanilla</option>
-            <option>Macy's</option>
-            <option>Other</option>
-          </select>
-
-          <label for="card-country">Card Country or Region</label>
-          <input id="card-country"
-                 type="text"
-                 placeholder="e.g. United States"
-                 required>
-
-          <label for="card-value">Card Value</label>
-          <input id="card-value"
-                 type="number"
-                 min="1"
-                 step="0.01"
-                 placeholder="Enter the card's face value"
-                 required>
-
-          <label for="card-currency">Card Currency</label>
-          <select id="card-currency" required>
-            <option value="">Choose currency</option>
-            <option value="USD">USD — US Dollar</option>
-            <option value="GBP">GBP — British Pound</option>
-            <option value="EUR">EUR — Euro</option>
-            <option value="CAD">CAD — Canadian Dollar</option>
-            <option value="AUD">AUD — Australian Dollar</option>
-            <option value="Other">Other</option>
-          </select>
-
-          <label for="card-note">Additional Information (Optional)</label>
-          <textarea id="card-note"
-                    rows="3"
-                    placeholder="Add any relevant information"></textarea>
-
-          <p class="notice">
-            Do not enter gift-card PINs, redemption codes, passwords
-            or other secret card information in this form.
+          <p class="hero-description">
+            TrustNova Trading Exchange is building a reliable gift-card
+            trading experience for customers in Nigeria, with a focus on
+            verification, clear communication and responsible handling
+            of transactions.
           </p>
 
-          <button id="trade-submit" type="submit">
-            Submit for Review
-          </button>
+          <div class="hero-buttons">
+            <a href="#account" class="button button-primary">
+              Create Your Account
+            </a>
 
-          <div id="trade-message" class="message hidden"></div>
-        </form>
-
-        <h3>My Submissions</h3>
-
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Card</th>
-                <th>Value</th>
-                <th>Status</th>
-                <th>Date</th>
-              </tr>
-            </thead>
-
-            <tbody id="trade-history">
-              <tr>
-                <td colspan="4">Sign in to view your submissions.</td>
-              </tr>
-            </tbody>
-          </table>
+            <a href="#how-it-works" class="button button-secondary">
+              Learn How It Works
+            </a>
+          </div>
         </div>
+
+        <div class="hero-card">
+          <h2>Why TrustNova?</h2>
+
+          <div class="feature">
+            <strong>✓ Account Security</strong><br>
+            Customer accounts are designed to use secure authentication.
+          </div>
+
+          <div class="feature">
+            <strong>✓ Verification First</strong><br>
+            Gift cards must be reviewed before any payout is approved.
+          </div>
+
+          <div class="feature">
+            <strong>✓ Clear Communication</strong><br>
+            Customers should receive clear information about the status
+            of their submissions.
+          </div>
+
+          <div class="feature">
+            <strong>✓ Nigeria First</strong><br>
+            The initial service is focused on the Nigerian market.
+          </div>
+        </div>
+
       </div>
     </section>
 
-  </main>
+    <section id="how-it-works">
+      <div class="container">
 
-  <footer>
-    <strong>TrustNova Trading Exchange</strong>
-    <br>
-    <strong>Trust in Every Trade.</strong>
-    <p>Nigeria-first gift-card trading.</p>
-    <small>
-      © <span id="year"></span> TrustNova Trading Exchange.
-      All rights reserved.
-    </small>
-  </footer>
+        <div class="section-heading">
+          <h2>How It Works</h2>
+          <p>
+            A simple process designed around verification and customer
+            communication.
+          </p>
+        </div>
 
-  <script>
-    /*
-      TrustNova Supabase connection.
-      Keep the project URL and publishable key correct.
-    */
+        <div class="cards">
 
-    const SUPABASE_URL =
-      "https://ozytlpmnjbpxpugwdwef.supabase.co";
+          <div class="card">
+            <h3>1. Create an Account</h3>
+            <p>
+              Register with your name and email address, then follow
+              any email-confirmation instructions.
+            </p>
+          </div>
 
-    const SUPABASE_PUBLISHABLE_KEY =
-      "sb_publishable_s7u58L73GduAg34u5QoLvg_96QAuSbm";
+          <div class="card">
+            <h3>2. Submit Your Gift Card</h3>
+            <p>
+              Provide the card information requested by the platform.
+              Only submit cards you own or are authorized to trade.
+            </p>
+          </div>
 
-    const ready =
-      !!SUPABASE_URL &&
-      !!SUPABASE_PUBLISHABLE_KEY &&
-      !!window.supabase;
+          <div class="card">
+            <h3>3. Verification and Review</h3>
+            <p>
+              A submission must be reviewed before a payout can be
+              approved. A submission is not a guarantee of payment.
+            </p>
+          </div>
 
-    const db = ready
-      ? window.supabase.createClient(
-          SUPABASE_URL,
-          SUPABASE_PUBLISHABLE_KEY
-        )
-      : null;
+        </div>
 
-    let currentMode = "login";
-    let currentUser = null;
+      </div>
+    </section>
 
-    const authForm = document.getElementById("auth-form");
-    const authMessage = document.getElementById("auth-message");
-    const tradeMessage = document.getElementById("trade-message");
+    <section id="gift-cards">
+      <div class="container">
 
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
+        <div class="section-heading">
+          <h2>Gift Card Trading</h2>
+          <p>
+            Our planned gift-card service will expand as card support,
+            pricing, verification and transaction procedures are tested.
+          </p>
+        </div>
 
-    function showMessage(element, message, error = false) {
-      element.textContent = message;
-      element.classList.remove("hidden");
-      element.classList.toggle("error", error);
-    }
+        <div class="cards">
 
-    function hideMessage(element) {
-      element.textContent = "";
-      element.classList.add("hidden");
-      element.classList.remove("error");
-    }
+          <div class="card">
+            <h3>Supported Cards</h3>
+            <p>
+              Available card brands and eligible countries must be
+              confirmed before a submission is accepted.
+            </p>
+          </div>
 
-    function setMode(mode) {
-      currentMode = mode;
+          <div class="card">
+            <h3>Rates and Payouts</h3>
+            <p>
+              Live rates and automatic payouts are not yet enabled in
+              this first website version. No payout amount is promised
+              until a verified rate and review process are available.
+            </p>
+          </div>
 
-      const signup = mode === "signup";
+          <div class="card">
+            <h3>Customer Protection</h3>
+            <p>
+              Never share your account password. Avoid submitting a
+              gift card until its eligibility and the transaction
+              terms have been confirmed.
+            </p>
+          </div>
 
-      document.getElementById("name-field")
-        .classList.toggle("hidden", !signup);
+        </div>
 
-      document.getElementById("full-name").required = signup;
+      </div>
+    </section>
 
-      document.getElementById("auth-submit").textContent =
-        signup ? "Create Account" : "Log In";
+    <section class="account-section" id="account">
+      <div class="container">
 
-      document.getElementById("login-tab")
-        .classList.toggle("active", !signup);
-
-      document.getElementById("signup-tab")
-        .classList.toggle("active", signup);
-
-      document.getElementById("password").autocomplete =
-        signup ? "new-password" : "current-password";
-
-      hideMessage(authMessage);
-    }
-
-    document.getElementById("login-tab").addEventListener(
-      "click", () => setMode("login")
-    );
-
-    document.getElementById("signup-tab").addEventListener(
-      "click", () => setMode("signup")
-    );
-
-    async function saveProfile(user, fullName) {
-      const profile = {
-        id: user.id,
-        full_name: fullName || user.user_metadata?.full_name || ""
-      };
-
-      const { error } = await db
-        .from("profiles")
-        .upsert(profile, { onConflict: "id" });
-
-      if (error) {
-        console.warn("Profile could not be saved:", error.message);
-      }
-    }
-
-    async function openDashboard(user) {
-      currentUser = user;
-
-      document.getElementById("auth-area")
-        .classList.add("hidden");
-
-      document.getElementById("dashboard")
-        .classList.remove("hidden");
-
-      const name =
-        user.user_metadata?.full_name ||
-        user.email ||
-        "Customer";
-
-      document.getElementById("welcome-message").textContent =
-        "Welcome, " + name;
-
-      await saveProfile(user, user.user_metadata?.full_name || "");
-
-      await loadTrades();
-    }
-
-    async function closeDashboard() {
-      currentUser = null;
-
-      document.getElementById("auth-area")
-        .classList.remove("hidden");
-
-      document.getElementById("dashboard")
-        .classList.add("hidden");
-
-      document.getElementById("trade-history").innerHTML =
-        '<tr><td colspan="4">Sign in to view your submissions.</td></tr>';
-    }
-
-    authForm.addEventListener("submit", async function(event) {
-      event.preventDefault();
-      hideMessage(authMessage);
-
-      if (!db) {
-        showMessage(
-          authMessage,
-          "The website connection is not ready. Please check the Supabase setup.",
-          true
-        );
-        return;
-      }
-
-      const email = document.getElementById("email").value.trim();
-      const password = document.getElementById("password").value;
-      const fullName = document.getElementById("full-name").value.trim();
-      const submitButton = document.getElementById("auth-submit");
-
-      if (currentMode === "signup" && !fullName) {
-        showMessage(authMessage, "Please enter your full name.", true);
-        return;
-      }
-
-      submitButton.disabled = true;
-      submitButton.textContent = "Please wait...";
-
-      try {
-        if (currentMode === "signup") {
-          const { data, error } = await db.auth.signUp({
-            email,
-            password,
-            options: {
-              data: {
-                full_name: fullName
-              }
-            }
-          });
-
-          if (error) throw error;
-
-          if (data.session && data.user) {
-            await openDashboard(data.user);
-
-            showMessage(
-              tradeMessage,
-              "Your account has been created. Welcome to TrustNova!"
-            );
-          } else {
-            showMessage(
-              authMessage,
-              "Registration submitted. Check your email for a confirmation message if required, then log in."
-            );
-
-            setMode("login");
-          }
-        } else {
-          const { data, error } = await db.auth.signInWithPassword({
-            email,
-            password
-          });
-
-          if (error) throw error;
-
-          if (data.user) {
-            await openDashboard(data.user);
-          }
-        }
-      } catch (error) {
-        showMessage(
-          authMessage,
-          error.message || "Something went wrong. Please try again.",
-          true
-        );
-      } finally {
-        submitButton.disabled = false;
-        submitButton.textContent =
-          currentMode === "signup" ? "Create Account" : "Log In";
-      }
-    });
-
-    document.getElementById("logout-button").addEventListener(
-      "click",
-      async function() {
-        if (!db) return;
-
-        const { error } = await db.auth.signOut();
-
-        if (error) {
-          alert("Unable to log out: " + error.message);
-          return;
-        }
-
-        await closeDashboard();
-        setMode("login");
-      }
-    );
-
-    async function loadTrades() {
-      if (!db || !currentUser) return;
-
-      const history = document.getElementById("trade-history");
-
-      history.innerHTML =
-        '<tr><td colspan="4">Loading submissions...</td></tr>';
-
-      const { data, error } = await db
-        .from("trades")
-        .select("id, card_brand, card_country, card_value, status, created_at")
-        .eq("user
+        <div
